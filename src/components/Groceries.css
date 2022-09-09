@@ -1,0 +1,29 @@
+.task-button {
+    cursor: pointer;
+}
+
+.button-holder {
+    width: 50px;
+}
+
+.container {
+    padding-bottom: 10px;
+    max-width: 500px;
+}
+
+.tasks {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.text {
+    margin-left: 50px;
+}
+
+.priority {
+    background-color: red;
+}

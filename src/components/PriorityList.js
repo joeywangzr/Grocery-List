@@ -1,12 +1,12 @@
 import React from 'react';
 import Groceries from './Groceries';
 
-const CompletedList = ({groceryList, handleToggle, handleFilter, handlePrio}) => {
+const PriorityList = ({groceryList, handleToggle, handleFilter, handlePrio}) => {
     return (
         <div>
-            <h3>Purchased:</h3>
+            <h3>To Purchase:</h3>
             {groceryList.map(groceries => {
-                if (groceries.complete === true) {
+                if  ((groceries.complete == false) && (groceries.priority == true))  {
                     return (
                         <Groceries groceries={groceries} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio}/>
                     )
@@ -16,4 +16,4 @@ const CompletedList = ({groceryList, handleToggle, handleFilter, handlePrio}) =>
     );
 };
  
-export default CompletedList;
+export default PriorityList;
