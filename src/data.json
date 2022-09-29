@@ -1,41 +1,26 @@
 [{
-    "id": 1,
-    "task": "Leetcode",
+    "task": "Carrots",
     "complete": false,
-    "priority": true
+    "priority": true,
+    "users": ["Joey"]
   }, {
-    "id": 2,
-    "task": "Do laundry",
+    "task": "Apples",
     "complete": true,
-    "priority": false
+    "priority": false,
+    "users": ["Joey, Kai"]
   }, {
-    "id": 3,
-    "task": "Vacuum floor",
+    "task": "Oranges",
     "complete": false,
-    "priority": false
+    "priority": false,
+    "users": ["Joey"]
   }, {
-    "id": 4,
-    "task": "Feed cat",
+    "task": "Pears",
     "complete": true,
-    "priority": false
+    "priority": false,
+    "users": ["Joey"]
   }, {
-    "id": 5,
-    "task": "Change light bulbs",
+    "task": "Peach",
     "complete": false,
-    "priority": false
-  }, {
-    "id": 6,
-    "task": "Go to Store",
-    "complete": true,
-    "priority": false
-  }, {
-    "id": 7,
-    "task": "Fill gas tank",
-    "complete": true,
-    "priority": false
-  }, {
-    "id": 8,
-    "task": "Change linens",
-    "complete": false,
-    "priority": false
+    "priority": false,
+    "users": ["Joey"]
   }]
