@@ -1,9 +1,10 @@
 .task-button {
     cursor: pointer;
+    margin-top: 12px;
 }
 
 .button-holder {
-    width: 50px;
+    width: auto;
 }
 
 .container {
@@ -26,4 +27,28 @@
 
 .priority {
     background-color: red;
+}
+
+.groceries {
+    font-size: 20px;
+}
+
+.wanted {
+    font-size: 14px;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+.right-buttons {
+    width: auto;
+}
+
+.center {
+    padding-right: 2px;
+    padding-left: 2px;
 }

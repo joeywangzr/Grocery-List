@@ -1,7 +1,7 @@
 import React from 'react';
 import Groceries from './Groceries';
 
-const CompletedList = ({groceryList, handleToggle, handleFilter, handlePrio}) => {
+const CompletedList = ({groceryList, handleToggle, handleFilter, handlePrio}) => {    
     return (
         <div>
             <h3>Purchased:</h3>

@@ -1,0 +1,17 @@
+.purchase-text {
+    margin-left: 50px;
+}
+
+.sort-button { 
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.sort {
+    cursor: pointer;
+}
+
+.sort-button-holder {
+    width: 50px;
+}

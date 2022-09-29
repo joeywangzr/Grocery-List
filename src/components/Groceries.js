@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
-import { Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Groceries.css'
 import taskButton from '../images/circle.svg';
 import checkMark from '../images/checkmark.svg';
 import important from '../images/important.svg';
+import plus from '../images/plus.svg';
 import me from '../images/trash.svg';
 
 const Groceries = ({groceries, handleToggle, handleFilter, handlePrio}) => {    
+
     const [buttonHover, setButtonHover] = useState(false);
     
     const handleDoneClick = (e) => {
@@ -45,30 +46,47 @@ const Groceries = ({groceries, handleToggle, handleFilter, handlePrio}) => {
                     <div id={groceries.id} key={groceries.id + groceries.task} name="groceries" value={groceries.id} className={groceries.complete ? "completed groceries" : "groceries"}>    
                         {groceries.task}
                     </div>
+                    <div class="wanted">
+                        Wanted by: {groceries.users.join(", ")}
+                    </div>
                 </div>
-                <div class="button-holder">
-                    <img
-                        className={"task-button"}
-                        id={groceries.id} 
-                        key={groceries.id + groceries.task} 
-                        name="groceries" 
-                        value={groceries.id} 
-                        onClick={handleRemoveClick}
-                        src={me}
-                        height="25"
-                    />
-                </div>
-                <div class="button-holder">
-                    <img
-                        className={"button2 task-button"}
-                        id={groceries.id} 
-                        key={groceries.id + groceries.task} 
-                        name="groceries" 
-                        value={groceries.id} 
-                        onClick={handlePrioClick}
-                        src={important}
-                        height="25"
-                    />
+                <div class="right-buttons row">
+                    <div class="button-holder col-sm">
+                        <img
+                            className={"task-button"}
+                            id={groceries.id} 
+                            key={groceries.id + groceries.task} 
+                            name="groceries" 
+                            value={groceries.id} 
+                            onClick={handleRemoveClick}
+                            src={me}
+                            height="25"
+                        />
+                    </div>
+                    <div class="button-holder col-sm center">
+                        <img
+                            className={"task-button"}
+                            id={groceries.id} 
+                            key={groceries.id + groceries.task} 
+                            name="groceries" 
+                            value={groceries.id} 
+                            onClick={handlePrioClick}
+                            src={important}
+                            height="25"
+                        />
+                    </div>
+                    <div class="button-holder col-sm">
+                        <img
+                            className={"task-button"}
+                            id={groceries.id} 
+                            key={groceries.id + groceries.task} 
+                            name="groceries" 
+                            value={groceries.id} 
+                            onClick={handlePrioClick}
+                            src={plus}
+                            height="25"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
