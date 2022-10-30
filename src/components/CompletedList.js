@@ -1,5 +1,6 @@
 import React from 'react';
 import Groceries from './Groceries';
+import './CompletedList.css';
 
 const CompletedList = ({groceryList, handleToggle, handleFilter, handlePrio}) => {
     return (
