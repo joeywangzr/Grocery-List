@@ -67,6 +67,9 @@ const Groceries = ({groceries, handleToggle, handleFilter, handlePrio}) => {
                     <div className="wanted">
                         Wanted by: {groceries.users.join(", ")}
                     </div>
+                    <div class="wanted">
+                        Wanted by: {groceries.users.join(", ")}
+                    </div>
                 </div>
                 <div className="right-buttons row">
                     <div className="button-holder col-sm">
