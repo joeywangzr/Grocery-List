@@ -18,23 +18,24 @@ const PriorityList = ({groceryList, handleToggle, handleFilter, handlePrio, hand
     
     return (
         <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col purchase-text">
+            <div className="container">
+                <div className="row">
+                    <div className="col purchase-text">
                         <h3>To Purchase:</h3>
                     </div>
-                    <div class="sort-button-holder sort-button">
+                    <div className="sort-button-holder sort-button">
                         <img 
                             className="sort"
                             src={sort} 
                             height="24px"
                             onClick={handleSortClick}
+                            alt="sort"
                         />
                     </div>
                 </div>
             </div>
                 {(isSorted ? alphabeticize(groceryList) : groceryList).map(groceries => {
-                    if ((groceries.complete == false) && (groceries.priority == true))  {
+                    if ((groceries.complete === false) && (groceries.priority === true))  {
                         return (
                             <Groceries groceries={groceries} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio}/>
                         )

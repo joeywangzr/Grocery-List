@@ -1,4 +1,4 @@
-// todo: formatting, edit task, add number of item, backend w/ individual users
+// todo: formatting, edit task, add number of item, backend w/ individual users, figure out a better way to cut down the string lenghts
 
 import React, { useState } from "react";
 
@@ -7,8 +7,8 @@ import data from "./data.json";
 import {Header, GroceryList, CompletedList, AddItem, PriorityList} from "./components";
 
 function App() {
-  
-  const [groceryList, setGroceryList] = useState(data);
+  const [groceryList, setGroceryList] = useState(data[0]);
+  const [isSorted, setSorted] = useState(false); 
 
   // toggle task completion
   const handleToggle = (id) => {
@@ -27,7 +27,7 @@ function App() {
   // form to add
   const addTask = (userInput ) => {
     let copy = [...groceryList];
-    copy = [...copy, { id: groceryList.length + 1, task: userInput, complete: false }];
+    copy = [...copy, { id: groceryList.length + 1, task: userInput, complete: false, priority: false, users: ["Joey"]} ];
     setGroceryList(copy);
   }
 
@@ -35,6 +35,10 @@ function App() {
     let filtered = groceryList.filter(task => task.id !== Number(id));
     setGroceryList(filtered);
   }
+
+  const handleSort = () => {
+    setSorted(!isSorted);
+  };
 
   // toggle task completion
   const handlePrio = (id) => {
@@ -49,13 +53,13 @@ function App() {
     });
     setGroceryList(prio);
   };
-
+  
   return (
     <div className="App">
       <Header />
       <AddItem addTask={addTask}/>
-      <PriorityList groceryList={groceryList} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio}/>
-      <GroceryList groceryList={groceryList} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio}/>
+      <PriorityList groceryList={groceryList} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio} handleSort={handleSort} isSorted={isSorted}/>
+      <GroceryList groceryList={groceryList} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio} isSorted={isSorted}/>
       <CompletedList groceryList={groceryList} handleToggle={handleToggle} handleFilter={handleFilter} handlePrio={handlePrio}/>
     </div>
   );

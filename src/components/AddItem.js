@@ -5,6 +5,7 @@ import './AddItem.css';
 const AddTask = ({ addTask }) => {
 
     const [ userInput, setUserInput ] = useState('');
+    const [ inputLength, setInputLength ] = useState(0);
 
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
@@ -12,21 +13,19 @@ const AddTask = ({ addTask }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTask(userInput);
-        setUserInput("");
+        if(userInput.trim().length !== 0) {
+            addTask(userInput);
+            setUserInput("");
+        }
     }
 
     return (
-            <div class="add-items container">
-                <div class="row justify-content-md-center">
-                    <div class="col">
-                        <form onSubmit={handleSubmit}>
-                            <input value={userInput} type="text" onChange={handleChange} placeholder="Add item..."/>
-                            <button>Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div className="input-holder">
+            <form onSubmit={handleSubmit}>
+                <input maxLength="50" value={userInput} type="text" onChange={handleChange} placeholder="Add item..."/>
+                <button>Submit</button>
+            </form>
+        </div>
     );
 };
 
